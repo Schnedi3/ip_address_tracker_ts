@@ -1,11 +1,11 @@
 import { IWidgetProps } from "../types/types";
 
+import { WidgetSkeleton } from "./skeletons/WidgetSkeleton";
 import "../css/widget.css";
 
 export const Widget = ({ data, loading, error }: IWidgetProps) => {
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <WidgetSkeleton />;
   if (error) return <p>{error}</p>;
-  if (!data) return <p>No data available</p>;
 
   const { ip, city, region_code, postal, utc_offset, org } = data;
 
