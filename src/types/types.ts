@@ -31,3 +31,7 @@ export interface IWidgetProps {
   loading: boolean;
   error: string | null;
 }
+
+export interface IMapProps {
+  data: IData;
+}

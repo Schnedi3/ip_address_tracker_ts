@@ -1,0 +1,23 @@
+/* MAP */
+#map {
+  position: absolute;
+  top: var(--header-height);
+  left: 0;
+  width: 100%;
+  height: calc(100vh - var(--header-height));
+  overflow: hidden;
+  z-index: -1;
+}
+
+.leaflet-popup-content {
+  font-family: Poppins;
+}
+
+.leaflet-left .leaflet-control {
+  display: none;
+}
+
+.leaflet-popup-close-button,
+.leaflet-control-attribution {
+  display: none;
+}

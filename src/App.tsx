@@ -16,7 +16,7 @@ export const App = () => {
       <figure className="header_bg"></figure>
       <Header data={data} ipAddress={ipAddress} setIpAddress={setIpAddress} />
       <Widget data={data} loading={loading} error={error} />
-      <Map />
+      <Map data={data} />
     </main>
   );
 };
