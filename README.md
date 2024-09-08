@@ -9,8 +9,8 @@ This is a solution to the [IP address tracker challenge on Frontend Mentor](http
 - Search for any IP addresses and see the key information and location
 
 ## Screenshots
-<!-- <img src="./screenshots/desktop_design.png">
-<img src="./screenshots/mobile_design.png"> -->
+<img src="./screenshots/desktop_design.jpg">
+<img src="./screenshots/mobile_design.jpg">
 
 ## Built with
 - React
