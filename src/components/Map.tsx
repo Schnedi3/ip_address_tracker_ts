@@ -14,7 +14,7 @@ export const Map = ({ data }: IMapProps) => {
   const ChangeLocation = () => {
     const map = useMap();
 
-    map.flyTo(location, 13, {
+    map.flyTo(location, 14, {
       duration: 3,
     });
 
@@ -22,7 +22,7 @@ export const Map = ({ data }: IMapProps) => {
   };
 
   return (
-    <MapContainer center={location} zoom={13} scrollWheelZoom={false} id="map">
+    <MapContainer center={location} zoom={14} scrollWheelZoom={false} id="map">
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
