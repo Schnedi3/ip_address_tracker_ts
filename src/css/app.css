@@ -31,11 +31,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: all 0.5s;
 }
 
 .app {
   font-family: Poppins;
+  animation: fade-In 1.5s;
 }
 
 .container {
@@ -68,5 +68,15 @@
 @media (max-width: 700px) {
   .header_bg {
     background-image: url(../assets/images/bg_mobile.png);
+  }
+}
+
+/* ANIMATION */
+@keyframes fade-In {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
