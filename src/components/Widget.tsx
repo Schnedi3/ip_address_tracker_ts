@@ -3,9 +3,8 @@ import { IWidgetProps } from "../types/types";
 import { WidgetSkeleton } from "./skeletons/WidgetSkeleton";
 import "../css/widget.css";
 
-export const Widget = ({ data, loading, error }: IWidgetProps) => {
+export const Widget = ({ data, loading }: IWidgetProps) => {
   if (loading) return <WidgetSkeleton />;
-  if (error) return <p>{error}</p>;
 
   const { ip, city, region_code, postal, utc_offset, org } = data;
 

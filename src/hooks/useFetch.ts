@@ -17,7 +17,13 @@ export const useFetch = (ipAddress?: string) => {
           ? `${baseURL}/${ipAddress}/json/`
           : `${baseURL}/json/`;
         const response = await axios.get(url);
-        setData(response.data);
+
+        if (response.data.error) {
+          setError(response.data.reason);
+          return null;
+        } else {
+          setData(response.data);
+        }
       } catch (err) {
         setError("Error fetching data");
       } finally {

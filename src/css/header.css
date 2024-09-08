@@ -14,6 +14,10 @@
   color: var(--white);
 }
 
+.error_visble {
+  color: #fcff3d;
+}
+
 .form {
   width: 55%;
   display: flex;

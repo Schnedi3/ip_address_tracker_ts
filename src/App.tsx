@@ -14,8 +14,8 @@ export const App = () => {
   return (
     <main className="app container">
       <figure className="header_bg"></figure>
-      <Header data={data} ipAddress={ipAddress} setIpAddress={setIpAddress} />
-      <Widget data={data} loading={loading} error={error} />
+      <Header ipAddress={ipAddress} setIpAddress={setIpAddress} error={error} />
+      <Widget data={data} loading={loading} />
       <Map data={data} />
     </main>
   );

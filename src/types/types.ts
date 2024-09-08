@@ -20,16 +20,15 @@ export const initialData = {
   longitude: 0,
 };
 
-export interface IAddressProps {
-  data: IData;
+export interface IHeaderProps {
   ipAddress: string;
   setIpAddress: (ipAddress: string) => void;
+  error: string | null;
 }
 
 export interface IWidgetProps {
   data: IData;
   loading: boolean;
-  error: string | null;
 }
 
 export interface IMapProps {
