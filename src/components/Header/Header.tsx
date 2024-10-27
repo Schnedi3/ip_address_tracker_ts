@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { toast } from "react-toastify";
 
 import { IHeaderProps } from "../../types/types";
 import iconClear from "../../assets/images/icon-clear.svg";
@@ -7,34 +8,21 @@ import styles from "./header.module.css";
 
 export const Header = ({ setIpAddress }: IHeaderProps) => {
   const [inputValue, setInputValue] = useState<string>("");
-  const [isInvalid, setIsInvalid] = useState<boolean>(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!inputValue) {
-      setIsInvalid(true);
+      toast.error("Please input an IP");
       return;
     }
 
     setIpAddress(inputValue);
   };
 
-  useEffect(() => {
-    if (isInvalid) {
-      const timer = setTimeout(() => {
-        setIsInvalid(false);
-      }, 3000);
-
-      return () => clearTimeout(timer);
-    }
-  }, [isInvalid]);
-
   return (
     <section className={styles.header}>
-      <h1 className={`${styles.title} ${isInvalid ? "error_visble" : ""}`}>
-        {isInvalid ? " Please input a valid IP" : "IP Address Tracker"}
-      </h1>
+      <h1 className={styles.title}>IP Address Tracker</h1>
 
       <form className={styles.form} autoComplete="off" onSubmit={handleSubmit}>
         <div className={styles.input}>

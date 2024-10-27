@@ -1,6 +1,7 @@
 import L from "leaflet";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import { toast } from "react-toastify";
 
 import { IMapProps } from "../../types/types";
 import iconLocation from "../../assets/images/icon-location.svg";
@@ -11,6 +12,7 @@ export const Map = ({ data }: IMapProps) => {
   const location = [latitude, longitude] as [number, number];
 
   if (isNaN(latitude) || isNaN(longitude)) {
+    toast.error("Invalid latitud and/or longitud");
     return;
   }
 

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { useFetch } from "./api/fetch";
 import { Header } from "./components/Header/Header";
@@ -15,6 +17,12 @@ export const App = () => {
 
   return (
     <main className="container">
+      <ToastContainer
+        autoClose={2000}
+        pauseOnHover={false}
+        pauseOnFocusLoss={false}
+      />
+
       <figure className="header_bg"></figure>
       <Header setIpAddress={setIpAddress} />
       <Widget data={data} isLoading={isLoading} />
