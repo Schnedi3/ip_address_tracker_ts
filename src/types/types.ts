@@ -9,7 +9,7 @@ export interface IData {
   longitude: number;
 }
 
-export const initialData = {
+export const initialIp = {
   ip: "",
   city: "",
   region_code: "",
@@ -21,14 +21,12 @@ export const initialData = {
 };
 
 export interface IHeaderProps {
-  ipAddress: string;
   setIpAddress: (ipAddress: string) => void;
-  error: string | null;
 }
 
 export interface IWidgetProps {
   data: IData;
-  loading: boolean;
+  isLoading: boolean;
 }
 
 export interface IMapProps {

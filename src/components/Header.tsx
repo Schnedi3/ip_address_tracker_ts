@@ -3,31 +3,22 @@ import { useEffect, useState } from "react";
 import { IHeaderProps } from "../types/types";
 import iconClear from "../assets/images/icon-clear.svg";
 import iconArrow from "../assets/images/icon-arrow.svg";
-
 import "../css/header.css";
 
-export const Header = ({ ipAddress, setIpAddress, error }: IHeaderProps) => {
-  const [inputValue, setInputValue] = useState(ipAddress);
+export const Header = ({ setIpAddress }: IHeaderProps) => {
+  const [inputValue, setInputValue] = useState<string>("");
   const [isInvalid, setIsInvalid] = useState<boolean>(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const ipRegex = /^(\d{1,3}\.){3}\d{1,3}$/;
-    if (!inputValue || !ipRegex.test(inputValue)) {
+    if (!inputValue) {
       setIsInvalid(true);
       return;
     }
 
     setIpAddress(inputValue);
-    setInputValue("");
   };
-
-  useEffect(() => {
-    if (error) {
-      setIsInvalid(true);
-    }
-  }, [error]);
 
   useEffect(() => {
     if (isInvalid) {
@@ -51,6 +42,7 @@ export const Header = ({ ipAddress, setIpAddress, error }: IHeaderProps) => {
             type="text"
             placeholder="Search for an IP address (e.g 192.168.0.1)"
             value={inputValue}
+            pattern="^(\d{1,3}\.){3}\d{1,3}$"
             onChange={(e) => setInputValue(e.target.value)}
           />
           <img

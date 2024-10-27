@@ -11,6 +11,10 @@ export const Map = ({ data }: IMapProps) => {
   const { latitude, longitude } = data;
   const location = [latitude, longitude] as [number, number];
 
+  if (isNaN(latitude) || isNaN(longitude)) {
+    return <p>No data</p>;
+  }
+
   const ChangeLocation = () => {
     const map = useMap();
 
