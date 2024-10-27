@@ -4,13 +4,14 @@ import { useFetch } from "./api/fetch";
 import { Header } from "./components/Header";
 import { Widget } from "./components/Widget";
 import { Map } from "./components/Map";
+import { Skeleton } from "./skeleton/Skeleton";
 import "./css/app.css";
 
 export const App = () => {
   const [ipAddress, setIpAddress] = useState<string>("");
   const { data, isLoading } = useFetch(ipAddress);
 
-  if (!data) return;
+  if (!data) return <Skeleton />;
 
   return (
     <main className="app container">

@@ -1,11 +1,11 @@
 import { IWidgetProps } from "../types/types";
-import { WidgetSkeleton } from "./skeletons/WidgetSkeleton";
+import { Skeleton } from "../skeleton/Skeleton";
 import "../css/widget.css";
 
 export const Widget = ({ data, isLoading }: IWidgetProps) => {
   const { ip, city, region_code, postal, utc_offset, org } = data;
 
-  if (isLoading) return <WidgetSkeleton />;
+  if (isLoading) return <Skeleton />;
 
   return (
     <section className="widget container">
