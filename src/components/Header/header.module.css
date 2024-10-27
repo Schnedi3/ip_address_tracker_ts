@@ -1,6 +1,6 @@
 /* HEADER */
 .header {
-  margin-top: 2rem;
+  margin-top: 1.7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,7 +10,7 @@
 .title {
   font-family: Montserrat;
   font-weight: 700;
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   color: var(--white);
 }
 
@@ -39,28 +39,23 @@
   font-size: 1.1rem;
   color: var(--dark-gray);
   border: 0;
-  border-radius: 1rem 0 0 1rem;
+  border-radius: 0.5rem 0 0 0.5rem;
   background-color: var(--white);
 }
 
 .input > input::placeholder {
-  opacity: 0.3;
   font-family: Josefin;
-  font-size: 0.95rem;
+  opacity: 0.3;
 }
 
-.input > input:focus-visible {
-  outline: 0;
-}
-
-.clear_icon {
+.clearIcon {
   display: none;
   position: absolute;
   right: 0.5rem;
   width: 2.5rem;
 }
 
-.clear_icon-show {
+.clearIconShow {
   display: block;
   opacity: 0.4;
 }
@@ -72,7 +67,7 @@
   align-items: center;
   background-color: var(--dark-gray);
   border: 0;
-  border-radius: 0 1rem 1rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
 }
 
 .submit > img {
@@ -81,7 +76,7 @@
 
 /* HOVER */
 @media (hover: hover) {
-  .clear_icon:hover {
+  .clearIcon:hover {
     opacity: 1;
     filter: var(--filter);
     cursor: pointer;
@@ -94,21 +89,7 @@
 }
 
 /* ADAPTIVE */
-@media (min-width: 701px) and (max-width: 900px) {
-  .input > input::placeholder {
-    font-size: 0.9rem;
-  }
-}
-
 @media (max-width: 700px) {
-  .header {
-    margin-top: 1.5rem;
-  }
-
-  .title {
-    font-size: 1.4rem;
-  }
-
   .form {
     width: 100%;
   }

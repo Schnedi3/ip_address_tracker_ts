@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 import { useFetch } from "./api/fetch";
-import { Header } from "./components/Header";
-import { Widget } from "./components/Widget";
-import { Map } from "./components/Map";
+import { Header } from "./components/Header/Header";
+import { Widget } from "./components/Widget/Widget";
+import { Map } from "./components/Map/Map";
 import { Skeleton } from "./skeleton/Skeleton";
-import "./css/app.css";
+import "./app.css";
 
 export const App = () => {
   const [ipAddress, setIpAddress] = useState<string>("");
@@ -14,7 +14,7 @@ export const App = () => {
   if (!data) return <Skeleton />;
 
   return (
-    <main className="app container">
+    <main className="container">
       <figure className="header_bg"></figure>
       <Header setIpAddress={setIpAddress} />
       <Widget data={data} isLoading={isLoading} />

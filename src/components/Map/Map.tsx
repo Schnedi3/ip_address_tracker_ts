@@ -1,18 +1,17 @@
 import L from "leaflet";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
-
-import { IMapProps } from "../types/types";
-import iconLocation from "../assets/images/icon-location.svg";
-
 import "leaflet/dist/leaflet.css";
-import "../css/map.css";
+
+import { IMapProps } from "../../types/types";
+import iconLocation from "../../assets/images/icon-location.svg";
+import "./map.css";
 
 export const Map = ({ data }: IMapProps) => {
   const { latitude, longitude } = data;
   const location = [latitude, longitude] as [number, number];
 
   if (isNaN(latitude) || isNaN(longitude)) {
-    return <p>No data</p>;
+    return;
   }
 
   const ChangeLocation = () => {

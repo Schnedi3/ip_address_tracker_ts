@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
-import { IHeaderProps } from "../types/types";
-import iconClear from "../assets/images/icon-clear.svg";
-import iconArrow from "../assets/images/icon-arrow.svg";
-import "../css/header.css";
+import { IHeaderProps } from "../../types/types";
+import iconClear from "../../assets/images/icon-clear.svg";
+import iconArrow from "../../assets/images/icon-arrow.svg";
+import styles from "./header.module.css";
 
 export const Header = ({ setIpAddress }: IHeaderProps) => {
   const [inputValue, setInputValue] = useState<string>("");
@@ -31,29 +31,31 @@ export const Header = ({ setIpAddress }: IHeaderProps) => {
   }, [isInvalid]);
 
   return (
-    <section className="header">
-      <h1 className={`title${isInvalid ? " error_visble" : ""}`}>
+    <section className={styles.header}>
+      <h1 className={`${styles.title} ${isInvalid ? "error_visble" : ""}`}>
         {isInvalid ? " Please input a valid IP" : "IP Address Tracker"}
       </h1>
 
-      <form className="form" autoComplete="off" onSubmit={handleSubmit}>
-        <div className="input">
+      <form className={styles.form} autoComplete="off" onSubmit={handleSubmit}>
+        <div className={styles.input}>
           <input
             type="text"
-            placeholder="Search for an IP address (e.g 192.168.0.1)"
+            placeholder="Search for an IP address"
             value={inputValue}
             pattern="^(\d{1,3}\.){3}\d{1,3}$"
             onChange={(e) => setInputValue(e.target.value)}
           />
           <img
-            className={`clear_icon${inputValue ? " clear_icon-show" : ""}`}
+            className={`${styles.clearIcon} ${
+              inputValue ? styles.clearIconShow : ""
+            }`}
             src={iconClear}
             alt="clear field"
             onClick={() => setInputValue("")}
           />
         </div>
 
-        <button className="submit" type="submit">
+        <button className={styles.submit} type="submit">
           <img src={iconArrow} alt="submit request" />
         </button>
       </form>

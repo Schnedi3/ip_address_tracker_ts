@@ -8,21 +8,21 @@ export const Skeleton = () => {
     <section className="container">
       <figure className="header_bg"></figure>
 
-      <article className="header">
-        <h2 className="title">Loading data</h2>
+      <article className={styles.header}>
+        <h2 className={styles.title}>Loading data</h2>
 
-        <form className="form">
-          <div className="input">
+        <form className={styles.form}>
+          <div className={styles.input}>
             <input type="text" placeholder="Loading data" />
           </div>
 
-          <button className="submit">
+          <button className={styles.submit}>
             <img src={iconArrow} alt="submit request" />
           </button>
         </form>
       </article>
 
-      <article className="widget container">
+      <article className={`container ${styles.widget}`}>
         {ipInfo.map((_, index) => (
           <div className={styles.info} key={index}>
             <h2></h2>
